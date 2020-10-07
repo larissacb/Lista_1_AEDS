@@ -1,6 +1,9 @@
 from Tarefa import tarefa
+#-------------------------------------------------------------------------------
+#Bibliotecas usadas
 import re
-
+#-------------------------------------------------------------------------------
+#Algumas variaveis e estruturas usadas
 y = True
 tarefas = list()
 posicao = list()
@@ -8,7 +11,8 @@ pontuacao_ordenada=list()
 ano_ordenado=list()
 mes_ordenado=list()
 dia_ordenado=list()
-
+#-------------------------------------------------------------------------------
+#Funcoes
 def menu():
     print("====================================================")
     print('Menu')
@@ -22,8 +26,8 @@ def menu():
     x = int(input('Digite um numero: '))
     print("====================================================")
     return x
-
-
+#-------------------------------------------------------------------------------
+#Loop
 while y == True:  # loop
     x = menu()
     if x == 1:
@@ -35,32 +39,31 @@ while y == True:  # loop
             if (re.findall('[0-9]+', dia)):
                 aux = True
             else:
-                print("Opcao invalida")
+                printprint("Opcao invalida. Digite novamente")
         aux = False
         while (aux == False):
             mes = input("Informe o mes: ")
             if (re.findall('[0-9]+', mes)):
                 aux = True
             else:
-                print("Opcao invalida")
+                print("Opcao invalida. Digite novamente")
         aux = False
         while (aux == False):
             ano = input("Informe o ano: ")
             if (re.findall('[0-9]+', ano)):
                 aux = True
             else:
-                print("Opcao invalida")
+                print("Opcao invalida. Digite novamente")
         aux = False
         while (aux == False):
             pontuacao = input("Informe a pontuacao: ")
             if (re.findall('[0-9.]+', pontuacao)):
                 aux = True
             else:
-                print("Opcao invalida")
+                print("Opcao invalida. Digite novamente")
         print("====================================================")
         a = tarefa(titulo, materia, int(dia), int(mes), int(ano), float(pontuacao))  # cria um objeto do tipo tarefa
         tarefas.append(a)  # adicono esse objeto a uma lista chamada tarefas
-
     elif x == 2:
         print("====================================================")
         k = int(input('Digite o numero da Tarefa: '))  # tenho que converter o numero para inteiro pq ele fica salvo como string
