@@ -1,4 +1,4 @@
-﻿class tarefa :
+class tarefa :
 
     def __init__(self,nome,materia,dia,mes,ano,ponto):
         self.nome = nome
@@ -45,24 +45,10 @@
     def getMateria(self):
         return self.materia
 
-    # def adicionar(self,nome,materia,dia,mes,ano,ponto):
-    #     self.nome = nome
-    #     self.dia = dia
-    #     self.mes = mes
-    #     self.ano = ano
-    #     self.ponto = ponto
-    #     self.materia = materia
-
-    # def excluir(self):
-    #     self.setNome == null
-    #     self.setMateria == null
-    #     self.setPonto == null
-    #     self.setDia == null
-    #     self.setMes == null
-    #     self.setAno == null
-
     def imprimir(self):
+        print("====================================================")
         print('Titulo :',self.nome)
         print('Materia :',self.materia)
         print('Pontuacao :',self.ponto)
         print('Data :',self.dia,'/',self.mes,'/',self.ano)
+        print("====================================================")
