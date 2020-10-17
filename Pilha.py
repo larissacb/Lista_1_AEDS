@@ -1,6 +1,6 @@
 class pilha:
 
-    def __init__(self):
+    def __init__(self): #Construtor da classe
         self.items = list()
         
     def empilha(self, item): #Insere o item no topo da pilha
