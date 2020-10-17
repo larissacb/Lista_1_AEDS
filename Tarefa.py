@@ -1,6 +1,6 @@
 class tarefa :
 
-    def __init__(self,nome,materia,dia,mes,ano,ponto):
+    def __init__(self,nome,materia,dia,mes,ano,ponto): #Construtor da classe
         self.nome = nome
         self.dia = dia
         self.mes = mes
@@ -8,47 +8,28 @@ class tarefa :
         self.ponto = ponto
         self.materia = materia
 
-
-    def setNome(self,nome):
-        self.nome=nome
-
-    def getNome(self):
+    def getNome(self): #Retorna a variavel nome
         return self.nome
 
-    def setDia(self,dia):
-        self.dia =dia
-
-    def getDia(self):
+    def getDia(self): #Retorna a variavel dia
         return self.dia
 
-    def setMes(self,mes):
-        self.mes=mes
-
-    def getMes(self):
+    def getMes(self): #Retorna a variavel mes
         return self.mes
 
-    def setAno(self,ano):
-        self.ano=ano
-
-    def getAno(self):
+    def getAno(self): #Retorna a variavel ano
         return self.ano
 
-    def setPonto(self,ponto):
-        self.ponto=ponto
-
-    def getPonto(self):
+    def getPonto(self): #Retorna a variavel de pontuacao
         return self.ponto
 
-    def setMateria(self,materia):
-        self.materia=materia
-
-    def getMateria(self):
+    def getMateria(self): #Retorna a variavel disciplina/materia
         return self.materia
 
     def imprimir(self):
         print("====================================================")
-        print('Titulo :',self.nome)
-        print('Materia :',self.materia)
-        print('Pontuacao :',self.ponto)
-        print('Data :',self.dia,'/',self.mes,'/',self.ano)
+        print('Titulo :', self.nome)
+        print('Materia :', self.materia)
+        print('Pontuacao :', self.ponto)
+        print('Data :', self.dia,'/', self.mes,'/', self.ano)
         print("====================================================")
