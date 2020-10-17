@@ -1,0 +1,3 @@
+# Lista_1_AEDS
+Implemente um sistema para gerir as tarefas a serem realizadas durante o ERE, como trabalhos, exercícios, aulas etc. As tarefas possuem título, matéria a qual estão associadas, pontuação e data de entrega. O sistema precisa permitir a inserção, exclusão e impressão das tarefas cadastradas. O uso de memória precisa “crescer” ou “reduzir” de acordo com a necessidade do aluno. A impressão pode ser ordenada por data de entrega ou por pontuação. Utilizem duas estruturas de dados distintas e comparem os resultados. Apresentem suas implementações e conclusões.
+A resolução foi feita com a Pilha e a Fila.
