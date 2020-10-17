@@ -1,6 +1,6 @@
 class fila:
 
-    def __init__(self):
+    def __init__(self): #Construtor da classe
         self.items = list()
     
     def enfileira(self, item): #Insere o item no final da lista
