@@ -27,11 +27,15 @@ def menu():
     x = int(input('Digite um numero: '))
     print("====================================================")
     return x
+
+def linha():
+    print("====================================================")
 #-------------------------------------------------------------------------------
 #Loop
 while y == True:  # loop
     x = menu()
-    if x == 1:
+    if x == 1: #Adicionar Tarefa
+        #Validacao dos dados digitados pelo usuario
         aux = False
         titulo = input("Informe o titulo: ")
         materia = input("Informe a materia: ")
@@ -40,44 +44,43 @@ while y == True:  # loop
             if (re.findall('[0-9]+', dia)):
                 aux = True
             else:
-                print("Opcao invalida. Digite novamente")
+                print("Dado invalido. Digite novamente")
         aux = False
         while (aux == False):
             mes = input("Informe o mes: ")
             if (re.findall('[0-9]+', mes)):
                 aux = True
             else:
-                print("Opcao invalida. Digite novamente")
+                print("Dado invalido. Digite novamente")
         aux = False
         while (aux == False):
             ano = input("Informe o ano: ")
             if (re.findall('[0-9]+', ano)):
                 aux = True
             else:
-                print("Opcao invalida. Digite novamente")
+                print("Dado invalido. Digite novamente")
         aux = False
         while (aux == False):
             pontuacao = input("Informe a pontuacao: ")
             if (re.findall('[0-9.]+', pontuacao)):
                 aux = True
             else:
-                print("Opcao invalida. Digite novamente")
-        print("====================================================")
+                print("Dado invalido. Digite novamente")
+        linha()
         a = tarefa(titulo, materia, int(dia), int(mes), int(ano), float(pontuacao))  # cria um objeto do tipo tarefa
-        agenda.addFila(a)
+        agenda.enfileira(a) #adiciona o item no final da fila
         
-    elif x == 2:
-        agenda.removeFila() #remove da ultima posicao
-        print("====================================================")
+    elif x == 2: #Excluir Tarefa
+        agenda.desenfileira() #remove o item do inicio da fila
+        linha()
         
-    elif x == 3:
-        print("====================================================")
+    elif x == 3: #Informacoes da Tarefa
         k = int(input('Digite o numero da Tarefa: '))  # tenho que converter o numero para inteiro pq ele fica salvo como string
         k -= 1  # considero que o usuario digita o numero da tarefa ignorando a posicao 0
         agenda.getPosicao(k).imprimir()
-        print("====================================================")
+        linha()
         
-    elif x == 4:  # Ordenar os dados em ordem crescente para pontuacao
+    elif x == 4:  #Ordenar os dados em ordem crescente para pontuacao
         i=0
         for i in range(agenda.getTamanho()): #nao encontrei outra forma mais eficiente para realizar a ordenacao
             tarefas.append(agenda.getPosicao(i))
@@ -86,10 +89,11 @@ while y == True:  # loop
         print("\nImprimindo as tarefas em ordem crescente de acordo com a pontuacao...")
         for i in range(len(pontuacao_ordenada)):
             pontuacao_ordenada[i].imprimir()
-            print("====================================================")
-        tarefas.clear()
-        pontuacao_ordenada.clear()
-    elif x == 5:  # Ordenar as tarefas pela data de entrega
+            linha()
+        tarefas.clear() #limpa a lista tarefas
+        pontuacao_ordenada.clear() #limpa a lista de pontuacao ordenada
+        
+    elif x == 5:  #Ordenar as tarefas pela data de entrega
         i=0
         for i in range(agenda.getTamanho()): #nao encontrei outra forma mais eficiente para realizar a ordenacao
             tarefas.append(agenda.getPosicao(i))
@@ -100,11 +104,13 @@ while y == True:  # loop
         i=0
         for i in range(len(dia_ordenado)):
             dia_ordenado[i].imprimir()
-        tarefas.clear()
-        ano_ordenado.clear()
-        mes_ordenado.clear()
-        dia_ordenado.clear()
-    elif x == 0:
-        agenda.apagar()
-        break
+        tarefas.clear() #limpa a lista de tarefas
+        ano_ordenado.clear() #limpa a lista de ano ordenado
+        mes_ordenado.clear() #limpa a lista de mes ordenado
+        dia_ordenado.clear() #limpa a lista de dia ordenado
+        
+    elif x == 0: #Sair
+        agenda.FFVazia() #limpa a fila
+        break #interrompe o loop
+    
     else: print("Opcao invalida. Digite novamente")
