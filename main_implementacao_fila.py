@@ -40,7 +40,7 @@ while y == True:  # loop
             if (re.findall('[0-9]+', dia)):
                 aux = True
             else:
-                printprint("Opcao invalida. Digite novamente")
+                print("Opcao invalida. Digite novamente")
         aux = False
         while (aux == False):
             mes = input("Informe o mes: ")
