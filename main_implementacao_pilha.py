@@ -1,6 +1,5 @@
 from Tarefa import tarefa
 from Pilha import pilha
-#-------------------------------------------------------------------------------
 #Bibliotecas usadas
 import re
 #-------------------------------------------------------------------------------
@@ -97,12 +96,12 @@ while y == True:  # loop
         for i in range(agenda.getTamanho()): #nao encontrei outra forma mais eficiente para realizar a ordenacao
             tarefas.append(agenda.getPosicao(i))
         i=0
-        ano_ordenado=sorted(tarefas, key=tarefa.getAno) #ordenando o ano a partir da lista 'tarefas'
-        mes_ordenado=sorted(ano_ordenado, key=tarefa.getMes) #ordenando o mes a partir da lista 'ano_ordenado'
-        dia_ordenado=sorted(mes_ordenado, key=tarefa.getDia) #ordenando o dia a partir da lista 'mes_ordenado'
+        dia_ordenado=sorted(tarefas, key=tarefa.getDia) #ordenando o dia a partir da lista 'tarefas'
+        mes_ordenado=sorted(dia_ordenado, key=tarefa.getMes) #ordenando o mes a partir da lista 'dia_ordenado'
+        ano_ordenado=sorted(mes_ordenado, key=tarefa.getAno) #ordenando o ano a partir da lista 'mes_ordenado'
         print("\nImprimindo as tarefas em ordem crescente de acordo com a data de entrega...")
-        for i in range(len(dia_ordenado)):
-            dia_ordenado[i].imprimir()
+        for i in range(len(ano_ordenado)):
+            ano_ordenado[i].imprimir()
         tarefas.clear() #limpa a lista de tarefas
         ano_ordenado.clear() #limpa a lista de ano ordenado
         mes_ordenado.clear() #limpa a lista de mes ordenado
